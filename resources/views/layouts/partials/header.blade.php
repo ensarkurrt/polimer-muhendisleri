@@ -47,18 +47,11 @@
                     <div class="nav-menus-wrapper" style="transition-property: none;">
                         <ul class="nav-menu">
 
-                            <li class="active"><a href="#">Home<span class="submenu-indicator"></span></a>
-                                <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
-                                    <li><a href="index.html" class="active">Home Style 1</a></li>
-                                    <li><a href="home-2.html">Home Style 2</a></li>
-                                    <li><a href="home-3.html">Home Style 3</a></li>
-                                    <li><a href="home-4.html">Home Style 4</a></li>
-                                    <li><a href="home-5.html">Home Style 5</a></li>
-                                    <li><a href="home-6.html">Home Style 6</a></li>
-                                    <li><a href="home-7.html">Home Style 7</a></li>
-                                    <li><a href="home-8.html">Home Style 8</a></li>
-                                </ul>
-                            </li>
+                            <li class="{{ Str::contains(\Request::route()->getName(), 'index') ? 'active' : '' }}"><a
+                                    href="{{route('index')}}">Anasayfa</a></li>
+
+                            <li class="{{ Str::contains(\Request::route()->getName(), 'employers') ? 'active' : '' }}">
+                                <a href="{{route('employers')}}">İşverenler</a></li>
 
                             <li><a href="#">For Candidates<span class="submenu-indicator"></span></a>
                                 <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">

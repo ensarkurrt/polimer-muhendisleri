@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DefaultController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',  [DefaultController::class, 'index'])->name('index');
+Route::get('/employers',  [DefaultController::class, 'employers'])->name('employers');
